@@ -9,6 +9,6 @@ public interface IssueServiceInterface{
     public List<Issue> getIssues();
     public Issue getIssue(int issueId);
     public void addIssue(Issue issue);
-    public void deleteIssue(int issueId);
     public Issue uppdateIssue(int issueId);
+    public void deleteIssue(int issueId);
 }

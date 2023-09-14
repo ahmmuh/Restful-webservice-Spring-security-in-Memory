@@ -1,3 +1,4 @@
+/*
 package se.codeanytime.issueTracker.securityConfig;
 
 import org.springframework.context.annotation.Bean;
@@ -47,3 +48,4 @@ public class BasicSecurity {
         return http.build();
     }
 }
+*/

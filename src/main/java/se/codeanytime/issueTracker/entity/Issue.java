@@ -18,12 +18,14 @@ import java.util.Date;
 @Data
 public class Issue {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int issueId;
     private String issueName;
     private String issueRapporter;
     private String issueDecription;
-    private Boolean fixed;
+    private Boolean closed;
+    private String issueType;
+    private Boolean open;
   @Temporal(TemporalType.DATE)
   @Column(nullable = false)
   private Date registerDate;

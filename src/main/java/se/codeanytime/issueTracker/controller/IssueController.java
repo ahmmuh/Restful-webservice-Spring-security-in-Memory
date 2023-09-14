@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/issues")
+@CrossOrigin(origins = "http://localhost:4200")
 public class IssueController {
     private IssueServiceInterface issueServiceInterface;
 
@@ -19,7 +20,7 @@ public class IssueController {
         this.issueServiceInterface = issueServiceInterface;
     }
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public List<Issue> getIssues(){
         List<Issue> issues = issueServiceInterface.getIssues();
         return issues;
@@ -42,7 +43,7 @@ public class IssueController {
        updatedIssue.setIssueName(issueDetail.getIssueName());
        updatedIssue.setIssueRapporter(issueDetail.getIssueRapporter());
        updatedIssue.setIssueDecription(issueDetail.getIssueDecription());
-       updatedIssue.setFixed(issueDetail.getFixed());
+       updatedIssue.setClosed(issueDetail.getClosed());
        updatedIssue.setRegisterDate(issueDetail.getRegisterDate());
        issueServiceInterface.uppdateIssue(issueId);
        return ResponseEntity.ok(updatedIssue);
